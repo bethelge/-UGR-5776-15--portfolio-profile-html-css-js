@@ -1,0 +1,594 @@
+/* Reset body margin and padding */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Navbar Styling */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.navbar-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  padding: 10px 60px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a.active {
+  color: #d2a233;
+}
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 30px;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Display Hamburger Menu */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide Navbar Links Initially */
+  #navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  #navbar-links.show {
+    display: flex;
+  }
+
+  /* Navbar Links for Mobile */
+  #navbar-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* Main content */
+main {
+  margin-top: 70px;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  /* text-align: center; */
+}
+.nameEffect {
+  padding: 120px 20px 0px;
+  color: #eebd64;
+  /* font-size: 32px; */
+}
+.name {
+  font-size: 48px;
+}
+.nameEffect p {
+  font-size: 32px;
+}
+
+#hero {
+  background: url("../Image/home-bg.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/* Social Media Icons Styling */
+.social-icons {
+  list-style: none;
+  display: flex;
+  /* justify-content: center; */
+
+  padding: 0px 20px;
+  /* margin: 20px 0; */
+}
+
+.social-icons li {
+  margin: 0 10px;
+}
+
+.social-icons li a {
+  text-decoration: none;
+  font-size: 24px; /* Adjust size of icons */
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons li a:hover {
+  color: #eebd64; /* Change this to your desired hover color */
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* About Section */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  /* padding: 50px 0; */
+}
+.containerAbout {
+  padding: 60px 20px;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  color: #856c4d;
+  margin-bottom: 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 160px;
+
+  /* max-width: 800px; */
+}
+
+.about-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 700px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 20%; /* Show multiple slides at once (5 slides visible at a time) */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.carousel-slide i {
+  font-size: 50px;
+  color: #b8a07e; /* Matching color */
+}
+
+.carousel-slide span {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.carousel-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-pagination .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-pagination .dot.active {
+  background-color: #b8a07e; /* Highlight active dot */
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stacks items vertically on smaller screens */
+    text-align: center;
+  }
+
+  .desc {
+    margin-top: 20px;
+  }
+}
+/* General Section Styling */
+#portfolio {
+  padding: 50px 0;
+  background-color: #1e1e1e; /* Dark background */
+  color: #f5f5f5;
+}
+
+#portfolio h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #a48960; /* Highlight color */
+}
+
+/* Portfolio Container */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Two columns for side-by-side layout */
+  gap: 30px; /* Space between items */
+}
+
+.portfolio-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #292929;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Images */
+.portfolio-container img {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover;
+  border-radius: 8px;
+
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Videos */
+.portfolio-container video,
+.portfolio-container iframe {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Text */
+.portfolio-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 15px;
+  color: #dcdcdc;
+  /* text-align: justify; */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+  }
+}
+
+/* Resume Section */
+#resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  background-color: #f3f3f3; /* Subtle background color for the section */
+}
+
+/* Container for the resume */
+.resumeContainer{
+  padding: 60px 20px !important;
+}
+.resumeContainer {
+  
+  width: 80%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* padding: 20px; */
+  text-align: center;
+}
+
+/* Heading styles */
+.resume-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c7a37a; /* Subtle gold color */
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.resume-summary {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+.resume-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.resume-table th,
+.resume-table td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Table Header Styles */
+.resume-table th {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Table Body Styling */
+.resume-table td {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Add striped rows for better readability */
+.resume-table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.resume-table tr:nth-child(even) {
+  background-color: #fff;
+}
+
+/* Emphasize the first column (Category) */
+.resume-table td:first-child {
+  font-weight: bold;
+  color: #000;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 20px;
+  background-color: #2a2a2a;
+}
+
+.contactContainer {
+  display: flex; /* Flex container for side-by-side layout */
+  gap: 40px; /* Adds space between info and form */
+  justify-content: space-between; /* Adds space between sections */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.info {
+  flex: 1; /* Take one portion of the container */
+}
+
+.info h2 {
+  color: #e6b873;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* Form Layout */
+form {
+  flex: 2; /* Take two portions of the container */
+}
+
+.flexform {
+  display: flex; /* Flex container for input fields */
+  gap: 20px; /* Adds space between inputs */
+}
+
+form div {
+  margin-bottom: 20px; /* Adds space between rows */
+}
+
+form div input,
+form div textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.flexform > div {
+  flex: 1; /* Equal width for "Your Name" and "Your Email" */
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #e6b873;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+  background-color: #d4a765;
+}
+
+/* Footer Section */
+#footer {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+#footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#footer ul li {
+  margin: 0 10px;
+}
+
+#footer ul li a {
+  color: #e6b873;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+#footer ul li a:hover {
+  color: #d4a765;
+}
+
+#footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column; /* Stack the sections vertically */
+    gap: 30px; /* Add space between the sections */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+  }
+
+  .info {
+    text-align: center; /* Center the info content */
+    flex: none; /* Allow the info section to have automatic width */
+    width: 100%; /* Ensure it takes full width on mobile */
+  }
+
+  .flexform {
+    flex-direction: column; /* Stack form fields vertically */
+    gap: 15px; /* Space between form fields */
+    width: 100%; /* Make the form take full width */
+  }
+
+  .flexform > div {
+    flex: none; /* Remove equal width for inputs */
+  }
+
+  textarea {
+    height: 120px; /* Increase height for better readability */
+  }
+
+  form input[type="submit"] {
+    width: auto; /* Allow the button width to adjust */
+  }
+
+  /* Ensure the submit button is centered */
+  form input[type="submit"] {
+    margin-top: 10px; /* Add space above the submit button */
+  }
+}
