@@ -3,17 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <script src="./script/script.js"></script>
+
     <title>Portfolio</title>
   </head>
   <body>
     <!-- ======== Header Section ============== -->
-    <header>
+    <header class="navbar-wrapper hidden">
       <nav class="navbar">
-        <ul>
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" id="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <ul id="navbar-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -22,33 +36,39 @@
         </ul>
       </nav>
     </header>
+
     <!-- ========= End of Header Section =========== -->
 
     <!-- Home Section -->
     <section id="hero" class="home">
       <div class="container">
-        <h1 class="name">
-          I'm <span class="typed name" data-typed-items="Bethel Gelan."></span>
-        </h1>
-        <p>A Full Stack Developer.</p>
-        <ul>
+        <div class="nameEffect">
+          <h1 class="name">
+            I'm
+            <span class="typed name" data-typed-items="Bethel Gelan."></span>
+          </h1>
+          <p>A Full Stack Developer.</p>
+        </div>
+        <ul class="social-icons">
           <li>
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook"></i
-            ></a>
+            <a href="https://github.com/yourprofile" target="_blank"
+              ><i class="fab fa-github"></i>
+            </a>
           </li>
           <li>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank"
+              ><i class="fab fa-instagram"></i>
+            </a>
           </li>
           <li>
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"
+              ><i class="fab fa-linkedin"></i>
+            </a>
           </li>
           <li>
-            <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin"></i
-            ></a>
+            <a href="https://facebook.com/yourprofile" target="_blank"
+              ><i class="fab fa-facebook"></i>
+            </a>
           </li>
         </ul>
       </div>
@@ -57,12 +77,13 @@
 
     <!-- About Section -->
     <section id="about">
-      <div class="container">
+      <div class="containerAbout">
+        <!-- About Section -->
         <h2>About Me</h2>
         <div class="about-content">
           <!-- Profile Picture -->
           <div class="about-img">
-            <img src="#" alt="Your profile picture" />
+            <img src="../src/Image/pfp.jpg" alt="Your profile picture" />
           </div>
           <!-- Description -->
           <div class="desc">
@@ -75,62 +96,49 @@
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Specialization Section -->
-    <section id="specialization">
-      <div class="container">
-        <h2>Specializations</h2>
-        <div class="slider">
-          <!-- HTML -->
-          <div class="swiper-slide">
-            <div class="specialization-item">
+        <!-- Specialization Section -->
+        <!-- Specialization Section -->
+        <div class="carousel">
+          <div class="carousel-wrapper">
+            <!-- HTML -->
+            <div class="carousel-slide">
               <i class="fa-brands fa-html5"></i>
               <span>HTML</span>
             </div>
-          </div>
-          <!-- CSS -->
-          <div class="swiper-slide">
-            <div class="specialization-item">
+            <!-- JavaScript -->
+            <div class="carousel-slide">
+              <i class="fa-brands fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <!-- CSS -->
+            <div class="carousel-slide">
               <i class="fa-brands fa-css3"></i>
               <span>CSS</span>
             </div>
-          </div>
-          <!-- React -->
-          <div class="swiper-slide">
-            <div class="specialization-item">
+            <!-- Python -->
+            <div class="carousel-slide">
+              <i class="fa-brands fa-python"></i>
+              <span>Python</span>
+            </div>
+            <!-- MySQL -->
+            <div class="carousel-slide">
+              <i class="fa-brands fa-database"></i>
+              <span>MySQL</span>
+            </div>
+            <!-- React -->
+            <div class="carousel-slide">
               <i class="fa-brands fa-react"></i>
               <span>React</span>
             </div>
           </div>
-          <!-- Node -->
-          <div class="swiper-slide">
-            <div class="specialization-item">
-              <i class="fa-brands fa-node"></i>
-              <span>Node.js</span>
-            </div>
-          </div>
-          <!-- Bootstrap -->
-          <div class="swiper-slide">
-            <div class="specialization-item">
-              <i class="fa-brands fa-bootstrap"></i>
-              <span>Bootstrap</span>
-            </div>
-          </div>
-          <!-- MySQL -->
-          <div class="swiper-slide">
-            <div class="specialization-item">
-              <i class="fa-brands fa-mysql"></i>
-              <span>MySQL</span>
-            </div>
-          </div>
-          <!-- JavaScript -->
-          <div class="swiper-slide">
-            <div class="specialization-item">
-              <i class="fa-brands fa-js"></i>
-              <span>JavaScript</span>
-            </div>
+          <!-- Pagination -->
+          <div class="carousel-pagination">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+            <span class="dot" data-index="5"></span>
           </div>
         </div>
       </div>
@@ -203,7 +211,7 @@
 
     <!-- Resume Section -->
     <section id="resume">
-      <div class="container">
+      <div class="container resumeContainer">
         <h2 class="resume-heading">My Resume</h2>
         <h2 class="resume-summary">
           Turning ideas into code and dreams into reality.
@@ -247,38 +255,39 @@
 
     <!-- Contact Section -->
     <section id="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <ul>
-          <li><span>Addis Ababa, Ethiopia</span></li>
-          <li><span>+251 906739490</span></li>
-          <li><span>bethelgelan16@gmail.com</span></li>
-        </ul>
+      <div class="container contactContainer">
+        <div class="info">
+          <h2>Contact Me</h2>
+          <ul>
+            <li><span>Addis Ababa, Ethiopia</span></li>
+            <li><span>+251 906739490</span></li>
+            <li><span>bethelgelan16@gmail.com</span></li>
+          </ul>
+        </div>
         <form>
-          <div>
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" />
+          <div class="flexform">
+            <div>
+              <label for="name"></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+              />
+            </div>
+            <div>
+              <label for="email"></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+              />
+            </div>
           </div>
+
           <div>
-            <label for="email">Your Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your Email"
-            />
-          </div>
-          <div>
-            <label for="subject">Subject</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Subject"
-            />
-          </div>
-          <div>
-            <label for="message">Message</label>
+            <label for="message"></label>
             <textarea
               id="message"
               name="message"
